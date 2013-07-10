@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MvcBlog.Models.Blog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2>BLOGI</h2>
+
+<p>
+    @Html.ActionLink("Loo uus", "Create")
+</p>
+
+
+        <ol>
+
+
+       @foreach (var item in Model) {
+       
+            @*<h6>
+            Title
+        </h6>
+    
+ 
+            
+            @Html.DisplayFor(modelItem => item.Title)
+                
+       
+         *@
+      
+           <br />
+            
+    
+   <br />
+             
+       <legend>
+            <li>@Html.DisplayFor(modelItem => item.Title)</li>
+           </legend>
+     
+           <p> @Html.DisplayFor(modelItem => item.Post)</p>
+    
+   <div>@Html.DisplayFor(modelItem => item.ReleaseDate)</div>
+
+           
+@*@foreach (var item in Model) {*@
+    
+    
+    @*<tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Post)
+        </td>*@
+       
+        <td>
+            @Html.ActionLink("Muuda", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detailselt", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Kustuta", "Delete", new { id=item.ID })
+        </td>@*
+     </tr>*@
+    
+    
+}
+
+        </ol>
+    
+
+

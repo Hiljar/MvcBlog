@@ -1,0 +1,30 @@
+﻿@model MvcBlog.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detailselt</h2>
+
+
+    <legend>Blog</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">ReleaseDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </div>
+
+    <div class="display-label">Post</div>
+    <div class="display-field">
+       <p> @Html.DisplayFor(model => model.Post)</p>
+    </div>
+
+<p>
+    @Html.ActionLink("Lisa", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Tagasi", "Index")
+</p>

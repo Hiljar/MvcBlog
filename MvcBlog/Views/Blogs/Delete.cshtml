@@ -1,0 +1,34 @@
+﻿@model MvcBlog.Models.Blog
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Kustuta</h2>
+
+<h3>Kindel et tahad kustutada?</h3>
+
+    <legend>Blog</legend>
+
+    <div class="display-label">Pealkiri</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Kuupäev</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </div>
+
+    <div class="display-label">Post</div>
+    <div class="display-field">
+       <p> @Html.DisplayFor(model => model.Post)</p>
+    </div>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Kustuta" /> 
+       
+    </p>
+    <div> @Html.ActionLink("Tagasi", "Index")</div>
+}
